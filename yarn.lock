@@ -147,9 +147,9 @@
   integrity sha512-tTga6OFfO2JS+Yt5hdryng259c/tzNgSWkdiU2E+RBHiysAIOta57n4PJ8iPahOSqEqjaToPI76wM+o441GaNQ==
 
 "@skynexui/components@^1.23.7":
-  version "1.23.7"
-  resolved "https://registry.yarnpkg.com/@skynexui/components/-/components-1.23.7.tgz#a873766da07ad5f9dc5b5825084aa7cecae4e57e"
-  integrity sha512-3somHPGCmppdaKv8Zz+oalGLQy2Jlrkj60XxSmpWIp3GVWq4xjGTresuUNol2cHndo4ZxHfIkS22yvsWbcRLnw==
+  version "1.24.0"
+  resolved "https://registry.yarnpkg.com/@skynexui/components/-/components-1.24.0.tgz#bc75cb9a877e30841a5fd44e5d4ed910e4b7ea8c"
+  integrity sha512-v0vvXlCg/Cp8FDxge1xan3ubxHTVd57lN8ynLjNDdBbeQsFQFIgDkmqdUlpHReWDbkhx03Ayp0EQ4k21o4L+BA==
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.36"
     "@fortawesome/fontawesome-free" "^5.15.4"
@@ -163,9 +163,9 @@
     react-ripples "^2.2.1"
 
 "@testing-library/dom@^8.0.0":
-  version "8.11.2"
-  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-8.11.2.tgz#fc110c665a066c2287be765e4a35ba8dad737015"
-  integrity sha512-idsS/cqbYudXcVWngc1PuWNmXs416oBy2g/7Q8QAUREt5Z3MUkAL2XJD7xazLJ6esDfqRDi/ZBxk+OPPXitHRw==
+  version "8.11.3"
+  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-8.11.3.tgz#38fd63cbfe14557021e88982d931e33fb7c1a808"
+  integrity sha512-9LId28I+lx70wUiZjLvi1DB/WT2zGOxUh46glrSNMaWVx849kKAluezVzZrXJfTKKoQTmEOutLes/bHg4Bj3aA==
   dependencies:
     "@babel/code-frame" "^7.10.4"
     "@babel/runtime" "^7.12.5"
@@ -190,9 +190,9 @@
   integrity sha512-HnYpAE1Y6kRyKM/XkEuiRQhTHvkzMBurTHnpFLYLBGPIylZNPs9jJcuOOYWxPLJCSEtmZT0Y8rHDokKN7rRTig==
 
 "@types/node@*":
-  version "17.0.11"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.11.tgz#e0630988ea4c75efde22d5b099360ecfe494160f"
-  integrity sha512-TgLsFcuinMobmML3PsILoRJq/h11/qS7UDlak1LUsazJcvJeKejEBuI1m5X2pBnMBF5T5HRAvtcnr4cV5nvc8Q==
+  version "17.0.12"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.12.tgz#f7aa331b27f08244888c47b7df126184bc2339c5"
+  integrity sha512-4YpbAsnJXWYK/fpTVFlMIcUIho2AYCi4wg5aNPrG1ng7fn/1/RZfCIpRCiBX+12RVa34RluilnvCqD+g3KiSiA==
 
 ansi-regex@^5.0.1:
   version "5.0.1"
@@ -229,9 +229,9 @@ big.js@^5.2.2:
   integrity sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==
 
 caniuse-lite@^1.0.30001283:
-  version "1.0.30001301"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001301.tgz#ebc9086026534cab0dab99425d9c3b4425e5f450"
-  integrity sha512-csfD/GpHMqgEL3V3uIgosvh+SVIQvCh43SNu9HRbP1lnxkKm1kjDG4f32PP571JplkLjfS+mg2p1gxR7MYrrIA==
+  version "1.0.30001302"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001302.tgz#da57ce61c51177ef3661eeed7faef392d3790aaa"
+  integrity sha512-YYTMO+tfwvgUN+1ZnRViE53Ma1S/oETg+J2lISsqi/ZTNThj3ZYBOKP2rHwJc37oCsPqAzJ3w2puZHn0xlLPPw==
 
 chalk@^2.0.0:
   version "2.4.2"

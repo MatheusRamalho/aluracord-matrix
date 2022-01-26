@@ -1,67 +1,24 @@
 import React from 'react';
-import appConfig from '../config.json';
+import { useRouter } from 'next/router';
 import { Box, Button, Text, TextField, Image } from '@skynexui/components';
 
-function GlobalStyle() {
-    return (
-        <style global jsx>{`
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                list-style: none;
-            }
+// CONFIGS...
+import appConfig from '../config.json';
 
-            body {
-                background-color: ${appConfig.theme.colors.secondary};
+// COMPONENTS...
+import { Title } from '../components/Title';
 
-                font-family: 'Open Sans', sans-serif;
-                font-weight: 400;
-                color: ${appConfig.theme.colors.white};
-            }
-
-            html, body, #__next {
-                min-height: 100vh;
-
-                display: flex;
-                flex: 1;
-            }
-
-            #__next {
-                flex: 1;
-            }
-
-            #__next > * {
-                flex: 1;
-            }
-        `}</style>
-    );
-}
-
-function Title(props) {
-    const Tag = props.tag || 'h1';
-
-    return (
-        <>
-            <Tag> {props.children} </Tag>
-
-            <style jsx>{`
-                ${Tag} {
-                    font-weight: 600;
-                    color: ${appConfig.theme.colors.white};
-                }
-            `}</style>
-        </>
-    );
-}
-
-export default function PaginaInicial() {
+export default function HomePage() {
     const [userName, setUserName] = React.useState('MatheusRamalho');
+    const routing = useRouter();
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        routing.push('/chat');
+    }
 
     return (
         <>
-            <GlobalStyle />
-
             <Box
                 styleSheet={{
                     display: 'flex',
@@ -92,6 +49,7 @@ export default function PaginaInicial() {
                     {/* Formulário */}
                     <Box
                         as="form"
+                        onSubmit={handleSubmit}
                         styleSheet={{
                             display: 'flex',
                             flexDirection: 'column',
@@ -167,11 +125,14 @@ export default function PaginaInicial() {
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
+                            justifyContent: 'center',
                             flex: 1,
                         }}
                     >
                         <Image
                             styleSheet={{
+                                width: '8rem',
+                                height: '8rem',
                                 marginBottom: '1rem',
                                 borderRadius: '50%',
                                 border: '0.200rem solid',
@@ -197,3 +158,5 @@ export default function PaginaInicial() {
         </>
     );
 }
+
+// Criar validação de se o input tiver menos de dois caracteres, dar disabled no button e não mostrar a imagem.
