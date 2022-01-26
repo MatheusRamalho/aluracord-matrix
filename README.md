@@ -1,3 +1,3 @@
 # ALURACORD
 
-Projeto desenvolvido durante a imersão React com a @alura @mariosouto @peas
+Projeto desenvolvido durante a imersão React com a @alura @omariosouto @peas
