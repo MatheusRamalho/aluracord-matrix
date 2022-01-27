@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { Box, Button, Text, TextField, Image } from '@skynexui/components';
 
-// CONFIGS...
+// CONFIG...
 import appConfig from '../config.json';
 
 // COMPONENTS...
@@ -99,6 +99,7 @@ export default function HomePage() {
                             type='submit'
                             label='Entrar'
                             fullWidth
+                            disabled={userName.length <= 2}
                             buttonColors={{
                                 contrastColor: appConfig.theme.colors.white,
                                 mainColor: appConfig.theme.colors.primary,
@@ -129,29 +130,50 @@ export default function HomePage() {
                             flex: 1,
                         }}
                     >
-                        <Image
-                            styleSheet={{
-                                width: '8rem',
-                                height: '8rem',
-                                marginBottom: '1rem',
-                                borderRadius: '50%',
-                                border: '0.200rem solid',
-                                borderColor: appConfig.theme.colors.primary,
-                            }}
-                            src={`https://github.com/${userName}.png`}
-                        />
+                        {userName.length > 2
+                            ? <Image
+                                styleSheet={{
+                                    width: '8rem',
+                                    height: '8rem',
+                                    marginBottom: '1rem',
+                                    borderRadius: '50%',
+                                    border: '0.200rem solid',
+                                    borderColor: appConfig.theme.colors.primary,
+                                }}
+                                src={`https://github.com/${userName}.png`}
+                            />
+                            : <Box
+                                styleSheet={{
+                                    width: '8rem',
+                                    height: '8rem',
+                                    marginBottom: '1rem',
+                                    borderRadius: '50%',
+                                    backgroundColor: appConfig.theme.colors.secondary,
+                                }}
+                            ></Box>
+                        }
 
-                        <Text
-                            variant="body4"
-                            styleSheet={{
-                                padding: '0.3rem 0.7rem',
-                                borderRadius: '0.44rem',
-                                backgroundColor: appConfig.theme.colors.primary,
-                                color: appConfig.theme.colors.white,
-                            }}
-                        >
-                            {userName}
-                        </Text>
+                        {userName.length > 2
+                            ?   <Text
+                                    variant="body4"
+                                    styleSheet={{
+                                        padding: '0.3rem 0.7rem',
+                                        borderRadius: '0.44rem',
+                                        backgroundColor: appConfig.theme.colors.primary,
+                                        color: appConfig.theme.colors.white,
+                                    }}
+                                >
+                                    {userName}
+                                </Text>
+                            : <Box
+                                styleSheet={{
+                                    width: '5rem',
+                                    height: '1.2rem',
+                                    borderRadius: '0.44rem',
+                                    backgroundColor: appConfig.theme.colors.secondary,
+                                }}
+                            ></Box>
+                        }
                     </Box>
                 </Box>
             </Box>
