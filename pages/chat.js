@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, TextField } from '@skynexui/components';
+import { createClient } from '@supabase/supabase-js';
 
 // CONFIG...
 import appConfig from '../config.json';
@@ -8,24 +9,57 @@ import appConfig from '../config.json';
 import { Header } from '../components/Header';
 import { MessageList } from '../components/MessageList';
 
+// SUPABASE...
+const GUITHUB_API_URL = 'https://api.github.com/users';
+const SUPABASE_URL = 'https://lxpdgqwthlywdwrjospm.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzQ3MDk4OCwiZXhwIjoxOTU5MDQ2OTg4fQ.mKHPcXv4SgYZJvECyxHmW1j0wOi3amU7i4H-Snx5FQM';
+const SUPABASE_CLIENT = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// UTILIZANDO JS PURO...
+// fetch(`${SUPABASE_URL}/rest/v1/messages?select=*`, {
+//     headers: {
+//         'Content-Type': 'application/json',
+//         'apikey': SUPABASE_ANON_KEY,
+//         'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+//     }
+// }).then((res) => {
+//     return res.json();
+// }).then((response) => {
+//     console.log(response);
+// });
+
 export default function ChatPage() {
-    /*
-        - [] lista de mensagens
-    */
     const [newMessage, setNewMessage] = React.useState();
     const [messageList, setMessageList] = React.useState([]);
 
+    React.useEffect(() => {
+        // UTILIZANDO SUPABASE...
+        SUPABASE_CLIENT
+            .from('messages')
+            .select('*')
+            .order('id', { ascending: false })
+            .then(({ data }) => {
+                setMessageList(data);
+            });
+    }, []);
+
     const handleNewMessage = (newMessage) => {
         const message = {
-            id: messageList.lengh + 1,
+            // id: messageList.lengh + 1,
             from: 'Testador',
             message: newMessage,
         };
 
-        setMessageList([
-            message, // Adiciona a nova mensagem na lista...
-            ...messageList, // Expande a lista de mensagens existente com o spread...
-        ]);
+        SUPABASE_CLIENT
+            .from('messages')
+            .insert([message])
+            .then(({ data }) => {
+                setMessageList([
+                    data[0],
+                    ...messageList,
+                ]);
+            });
+
         setNewMessage('');
     }
 

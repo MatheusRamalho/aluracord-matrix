@@ -4,7 +4,7 @@ import { Box, Text, Image } from '@skynexui/components';
 import appConfig from '../../config.json';
 
 export function MessageList(props) {
-    console.log('MessageList', props);
+    // console.log('MessageList', props);
 
     return (
         <Box
@@ -56,7 +56,7 @@ export function MessageList(props) {
 
                                     display: 'inline-block',
                                 }}
-                                src={`https://github.com/vanessametonini.png`}
+                                src={`https://github.com/${mess.from}.png`}
                             />
 
                             <Text tag="strong"> {mess.from} - </Text>
